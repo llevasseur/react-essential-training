@@ -3,10 +3,15 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [emotion, setEmotion] = useState("happy");
+  const [secondary, setSecondary] = useState('tired')
 
   useEffect(() => {
     console.log(`It's ${emotion} around here!`);
-  }, [emotion]);
+  }, [emotion, secondary]);
+
+  useEffect( () => {
+    console.log(`It's ${secondary} around here!`)
+  }, [secondary])
 
   return (
     <div className="App">
@@ -19,6 +24,15 @@ function App() {
       >
         Excited
       </button>
+      <h2>
+        Secondary emotion is {secondary}
+      </h2>
+      <button
+        onClick={() => setSecondary("grateful")}
+      >
+        Grateful
+      </button>
+      
     </div>
   );
 }

@@ -1,9 +1,12 @@
 import "./App.css";
+import { useState } from 'react'
 
-function App() {
+function App({ library }) {
+  const what = useState()
+  console.log(what)
   return (
     <div className="App">
-      <h1>Hello from React</h1>
+      <h1>Hello from {second}</h1>
     </div>
   );
 }
